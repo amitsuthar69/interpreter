@@ -8,8 +8,13 @@ type Token struct {
 }
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 func LoopUpIdent(ident string) TokenType {
@@ -33,11 +38,20 @@ const (
 	INT   = "INT"   // 12345
 
 	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
-	MINUS  = "-"
-	MUL    = "*"
-	DIV    = "/"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	MUL      = "*"
+	DIV      = "/"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+
+	EQ     = "=="
+	NOT_EQ = "!="
+
+	GT = ">"
+	LT = "<"
 
 	// Delimiters
 	COMMA     = ","
@@ -51,4 +65,9 @@ const (
 	// keywords
 	FUNCTION = "fn"
 	LET      = "let"
+	TRUE     = "true"
+	FALSE    = "false"
+	IF       = "if"
+	ELSE     = "else"
+	RETURN   = "return"
 )
